@@ -115,8 +115,9 @@ def plot_modulus(fit_value):
     em_ax = em_fig.add_subplot(111)
 
     em_ax.plot(strain, stress, "blue")
-    em_ax.plot(EX_tan, EY_tan, "red")
-    em_ax.text(
+    em_ax.plot(EX_tan, EY_tan, color = "red")
+    
+    em_ax.text( 
         (EX_tan[0] + EX_tan[-1])/2 -max(strain)/10 , 
         (EY_tan[0] + EY_tan[-1])/2, 
         r'$E_{lin}$', fontsize=15, 
@@ -124,7 +125,9 @@ def plot_modulus(fit_value):
         )
 
     em_ax.plot(EX_sec, EY_sec, "orange")
-
+    if correction_secant:
+        em_ax.plot([EX_sec[0], EX_sec[0]], [0, EY_sec[0]], linestyle = "dashed", color = "gray")
+    #em_ax.plot([0, EX_sec[0]], [EY_sec[0], EY_sec[0]], linestyle = "dashed", color = "gray")
     em_ax.text(
         (EX_sec[0] + EX_sec[-1])/2 - max(strain)/10,
         (EY_sec[0] + EY_sec[-1])/2, 
