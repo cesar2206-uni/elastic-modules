@@ -22,10 +22,13 @@ if uploaded_file is not None:
     #string_value = StringIO(uploaded_file.getvalue().decode("utf-8")).read()
 correction_0 = st.sidebar.checkbox('Correction in (0, 0)')
 # Processing
-
-
+   
 strain = df["strain"].to_numpy()
 stress = df["stress"].to_numpy()
+
+if correction_0:
+    strain = np.concatenate((np.array([0]), df["strain"].to_numpy()))
+    stress = np.concatenate((np.array([0]), df["stress"].to_numpy()))
 
 def plot_modulus():
     
@@ -134,7 +137,7 @@ def plot_modulus():
 
 
 # Principal Layout
-st.markdown("# Plotting")   
+st.markdown("# Plotting Evaluation")   
 
 #if correction_0:
 em_result = plot_modulus()
