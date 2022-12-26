@@ -182,7 +182,7 @@ em_result = plot_modulus(fit_value)
 st.pyplot(em_result)
 
 fn = uploaded_file.name[:-3]+ "png"
-plt.savefig(fn)
+em_result.savefig(fn) 
 with open(fn, "rb") as img:
     btn = st.download_button(
         label="Download image",
