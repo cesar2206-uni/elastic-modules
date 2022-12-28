@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
 from io import StringIO
+import matplotlib.font_manager
 
 # Matplotlib configuration
 mpl.rcParams['font.family'] = 'Yu Gothic'
