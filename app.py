@@ -26,7 +26,8 @@ correction_mpa = st.sidebar.checkbox('Correction 2: Y axis in mPa')
 st.sidebar.markdown("# Secant elastic modulus")
 
 correction_secant = st.sidebar.checkbox('Correction of Secant elastic modulus')
-d_secant = st.sidebar.slider('Initial displacement', 0.0, 2.0, 1.0)
+#d_secant = st.sidebar.slider('Initial displacement', 0.0, 2.0, 1.0)
+d_secant = st.sidebar.number_input("Initial displacement", min_value = 0.00, value = 1.00, step = 0.25)
 
 st.sidebar.markdown("# Linear elastic modulus")
 fit_value = st.sidebar.number_input("Minimum fit lenght", min_value = 3, value = 7, step = 1)
