@@ -194,3 +194,4 @@ with open(fn, "rb") as img:
     )
         
 st.markdown("Author: César Manuel Sánchez Oré (cesar.sanchez@wsp.com)")
+st.markdown("Checked: 01/01/2023")
